@@ -1,15 +1,18 @@
 <!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="${(i18n.currentLanguageTag)!('en')}">
 
-        <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico" />
-        <title>Educa</title>
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <body>
-        <div id="root"></div>
-        <script type="module" src="/src/main.tsx"></script>
-    </body>
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/favicon.ico" />
+    <title>Educa</title>
+</head>
+
+<body style="margin: 0; padding: 0; height: 100vh; width: 100vw;">
+    <div id="root" style="height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;">
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

@@ -153,6 +153,10 @@ const EmailOtp = (props: PageProps<"email-otp-code.ftl">) => {
                   e.preventDefault();
                   const form = document.getElementById('kc-email-otp-form') as HTMLFormElement;
                   if (form) {
+                    // Remove input de restart se existir
+                    const restartInput = document.getElementById('restartInput');
+                    if (restartInput) restartInput.remove();
+
                     // Cria ou atualiza um input hidden para indicar o reenvio
                     let resendInput = document.getElementById('resendCodeInput') as HTMLInputElement;
                     if (!resendInput) {
@@ -183,9 +187,34 @@ const EmailOtp = (props: PageProps<"email-otp-code.ftl">) => {
             </Box>
 
             <Divider sx={{ margin: "20px 0px" }}></Divider>
+            {/* Botão de Retornar à página do LOGIN (Usa execution = restart) */}
             <Box sx={{ display: 'flex', justifyContent: 'left', columnGap: '5px', marginTop: '20px' }}>
               <Link
-                href={url.loginUrl}
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  const form = document.getElementById('kc-email-otp-form') as HTMLFormElement;
+                  if (form) {
+                    // Remove input de resend se existir
+                    const resendInput = document.getElementById('resendCodeInput');
+                    if (resendInput) resendInput.remove();
+
+                    // Adiciona um parâmetro para cancelar/reiniciar o fluxo de autenticação
+                    // Adiciona o input 'execution' com valor 'restart' para cair no resetFlow() do seu SPI
+                    let restartInput = document.getElementById('restartInput') as HTMLInputElement;
+                    if (!restartInput) {
+                      restartInput = document.createElement('input');
+                      restartInput.type = 'hidden';
+                      restartInput.id = 'restartInput';
+                      restartInput.name = 'execution';
+                      form.appendChild(restartInput);
+                    }
+                    restartInput.value = 'restart';
+                    setLoading(true);
+                    form.submit();
+                  }
+                }}
                 sx={{
                   display: 'flex',
                   alignItems: 'center',

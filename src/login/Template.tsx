@@ -19,7 +19,8 @@ const Template = (props: CustomTemplateProps<KeycloakThemeFile>) => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh',
+        minHeight: '100vh',
+        width: '100vw',
         overflow: 'hidden',
         boxSizing: 'border-box',
         backgroundColor: 'transparent',
@@ -30,7 +31,7 @@ const Template = (props: CustomTemplateProps<KeycloakThemeFile>) => {
         backgroundAttachment: "fixed",
       }}>
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexGrow: 1 }}>
-        <Box sx={{ minWidth: '500px', maxWidth: '500px' }}>
+        <Box sx={{ width: '400px', paddingLeft: '50px'}}>
             <Card sx={{ p: 2 }}>
               {children}
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mt: 2 }}>
