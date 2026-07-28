@@ -11,5 +11,11 @@ export default {
     passwordRequirementsNumber: 'Al menos un número',
     passwordRequirementsUppercase: 'Al menos una letra mayúscula',
     passwordRequirementsLowercase: 'Al menos una letra minúscula',
-    passwordRequirementsSpecialChar: 'Al menos un carácter especial'
+    passwordRequirementsSpecialChar: 'Al menos un carácter especial',
+    emailOtpErrorExpired: 'Su código de acceso ha caducado. Por favor, solicite el envío de un nuevo código de acceso.',
+    emailOtpErrorInvalidated: 'Ha alcanzado el límite de intentos. Por su seguridad, el código actual ha sido desactivado. Por favor, solicite un nuevo código de acceso.',
+    emailOtpErrorWrong: 'Código de acceso incorrecto. Verifique los números introducidos e intente de nuevo.',
+    emailOtpErrorWait: 'Espere 30 segundos para solicitar un nuevo código.',
+    emailOtpErrorEmailSend: 'Error al enviar el correo electrónico de verificación. Inténtelo de nuevo más tarde.',
+    emailOtpSuccessResend: 'Se ha enviado un nuevo código a su correo electrónico.'
 }

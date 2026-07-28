@@ -11,7 +11,19 @@ const kcContextExtension: KcContextExtension = {
         ...kcEnvDefaults
     }
 };
-const kcContextExtensionPerPage: KcContextExtensionPerPage = {};
+
+const kcContextExtensionPerPage: KcContextExtensionPerPage = {
+    "email-otp-code.ftl": {
+        url: {
+            loginAction: "",
+            loginRestartUrl: ""
+        },
+        messagesPerField: {
+            existsError: () => false,
+            getFirstError: () => ""
+        }
+    }
+};
 
 export const { getKcContextMock } = createGetKcContextMock({
     kcContextExtension,

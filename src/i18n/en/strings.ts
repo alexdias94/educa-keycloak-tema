@@ -11,5 +11,11 @@ export default {
     passwordRequirementsNumber: 'At least one number',
     passwordRequirementsUppercase: 'At least one uppercase letter',
     passwordRequirementsLowercase: 'At least one lowercase letter',
-    passwordRequirementsSpecialChar: 'At least one special character'
+    passwordRequirementsSpecialChar: 'At least one special character',
+    emailOtpErrorExpired: 'Your access code has expired. Please request a new access code.',
+    emailOtpErrorInvalidated: 'You have reached the maximum number of attempts. For your security, the current code has been disabled. Please request a new access code.',
+    emailOtpErrorWrong: 'Incorrect access code. Check the numbers entered and try again.',
+    emailOtpErrorWait: 'Please wait 30 seconds before requesting a new code.',
+    emailOtpErrorEmailSend: 'Error sending verification email. Please try again later.',
+    emailOtpSuccessResend: 'A new code has been sent to your email.'
 }
